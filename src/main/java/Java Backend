@@ -20,8 +20,8 @@ import java.util.HashSet;
 @SpringBootApplication
 @RestController
 public class AirdropApplication {
-    private static final String BSC_RPC_URL = "YOUR_BSC_RPC_URL";
-    private static final String CONTRACT_ADDRESS = "YOUR_LISPROCOIN_CONTRACT_ADDRESS";
+    private static final String BSC_RPC_URL = "https://bsc-dataseed1.binance.org/";
+    private static final String CONTRACT_ADDRESS = "0xE62A9bc6eDe534E18Dd2793Dcaf5A2B6df112180";
     // Add Database here, or replace with local memory set
     private HashSet<String> airdropParticipants = new HashSet<>();
 
