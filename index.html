@@ -9,12 +9,139 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+      /* Stili base */
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+         .header {
+             background-color: #fff;
+             padding: 20px 0;
+             border-bottom: 1px solid #ddd;
+         }
+        .header__container{
+             display: flex;
+             align-items: center;
+             justify-content: flex-start;
+        }
+        .logo-container{
+             margin-right: 20px;
+        }
+          .logo {
+            width: 80px; /* Regola la larghezza del logo */
+            height: auto;
+        }
+         .header__title {
+            margin: 0;
+        }
+        .main{
+           padding: 20px 0;
+        }
+
+       .main__container{
+
+        }
+        .main__info {
+            margin-bottom: 20px;
+        }
+         .main__heading{
+             font-size: 2em;
+            color: #333;
+            margin-bottom: 10px;
+        }
+          .button-container {
+           margin-bottom: 20px;
+        }
+
+        .buy-button {
+             background-color: #5cb85c;
+             color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+             border-radius: 5px;
+            display: inline-block;
+        }
+        .additional-info {
+          margin-bottom: 20px;
+        }
+        .additional-info__heading{
+         font-size: 1.5em;
+         color: #333;
+          margin-bottom: 10px;
+        }
+         .additional-info__text{
+            margin-bottom: 10px;
+            color: #777;
+        }
+         .additional-info__link {
+          color: #337ab7;
+         text-decoration: none;
+           
+        }
+        .whitepaper {
+            margin-top: 20px;
+        }
+
+          .whitepaper__heading {
+        font-size: 1.5em;
+        margin-bottom: 10px;
+          color: #333;
+    }
+    .whitepaper__text {
+        margin-bottom: 10px;
+          color: #777;
+    }
+       .whitepaper__link{
+            color: #337ab7;
+           text-decoration: none;
+    }
+       /* Stili Tradingview */
+     .tradingview-chart {
+        margin-top: 20px;
+    }
+
+    .tradingview-chart__heading {
+        font-size: 1.5em;
+        margin-bottom: 10px;
+        color: #333;
+    }
+        .footer{
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+             position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+         .footer__container{
+            
+        }
+
+        .footer__text{
+            margin: 0;
+        }
+         .footer__disclaimer{
+            margin: 0;
+            font-size: 0.8em;
+        }
+
+    </style>
 </head>
 <body>
     <header class="header">
         <div class="container header__container">
             <div class="logo-container">
-                <!-- Logo con percorso remoto -->
                 <img src="https://raw.githubusercontent.com/15-Lippo/Airdrop/refs/heads/master/src/img/logo.png" alt="Lisprocoin Logo" class="logo">
             </div>
             <h1 class="header__title">Lisprocoin ICO</h1>
@@ -47,6 +174,32 @@
                     </a>
                 </section>
             </section>
+            
+             <!-- TradingView Chart -->
+            <section class="tradingview-chart">
+                <h3 class="tradingview-chart__heading">Price Chart</h3>
+            
+                    <div class="tradingview-widget-container" style="height: calc(100vh - 250px); width: 100%;">
+                        <div class="tradingview-widget-container__widget" style="height: calc(100vh - 250px); width: 100%;">
+                    </div>
+                    <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+                    <script type="text/javascript">
+                        new TradingView.widget({
+                          "autosize": true,
+                          "symbol": "PANCAKESWAP:LSP20BUSD",
+                          "interval": "15",
+                          "timezone": "Etc/UTC",
+                          "theme": "dark",
+                          "style": "1",
+                          "locale": "en",
+                          "enable_publishing": false,
+                          "hideideas": true,
+                          "container_id": "tradingview_361b2"
+                        });
+                    </script>
+
+            </section>
+             
         </div>
     </main>
 
@@ -57,4 +210,4 @@
         </div>
     </footer>
 </body>
-</html>
+    </html>
