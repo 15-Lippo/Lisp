@@ -7,161 +7,39 @@
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-        /* Stili CSS */
-        body {
-            font-family: 'Roboto', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
-        }
-
-        .header {
-            background-color: #0077b6;
-            color: white;
-            padding: 1rem 0;
-            text-align: center;
-        }
-
-        .header__container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .logo {
-            max-width: 100px;
-            margin-bottom: 1rem;
-        }
-
-        .header__title {
-            font-family: 'Poppins', sans-serif;
-            font-size: 2rem;
-            margin: 0;
-        }
-
-        .main__container {
-            padding: 2rem;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .main__info {
-            text-align: center;
-            margin-bottom: 2rem;
-        }
-
-        .main__heading {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .button-container {
-            text-align: center;
-            margin-bottom: 2rem;
-        }
-
-        .buy-button {
-            background-color: #0077b6;
-            color: white;
-            padding: 0.75rem 1.5rem;
-            text-decoration: none;
-            border-radius: 5px;
-            font-size: 1rem;
-            transition: 0.3s;
-        }
-
-        .buy-button:hover {
-            background-color: #0056b3;
-        }
-
-        .additional-info {
-            background-color: white;
-            padding: 1.5rem;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-
-        .additional-info__heading {
-            font-size: 1.25rem;
-            margin-bottom: 1rem;
-        }
-
-        .additional-info__text {
-            margin-bottom: 0.5rem;
-        }
-
-        .additional-info__link {
-            color: #0077b6;
-            text-decoration: none;
-        }
-
-        .additional-info__link:hover {
-            text-decoration: underline;
-        }
-
-        .footer {
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 1rem 0;
-            margin-top: 2rem;
-        }
-
-        .footer__text,
-        .footer__disclaimer {
-            margin: 0.5rem 0;
-            font-size: 0.875rem;
-        }
-
-        @media (max-width: 768px) {
-            .header__title {
-                font-size: 1.5rem;
-            }
-
-            .buy-button {
-                font-size: 0.9rem;
-                padding: 0.5rem 1rem;
-            }
-
-            .main__heading {
-                font-size: 1.25rem;
-            }
-        }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header class="header">
         <div class="container header__container">
-            <img src="logo.png" alt="Logo Lisprocoin che mostra una moneta moderna" class="logo">
+            <div class="logo-container">
+                <!-- Logo con percorso remoto -->
+                <img src="https://raw.githubusercontent.com/15-Lippo/Airdrop/refs/heads/master/src/img/logo.png" alt="Lisprocoin Logo" class="logo">
+            </div>
             <h1 class="header__title">Lisprocoin ICO</h1>
         </div>
     </header>
 
-    <nav class="navbar">
-        <ul style="list-style: none; display: flex; justify-content: center; padding: 0; margin: 1rem 0;">
-            <li style="margin: 0 1rem;"><a href="#main-info" style="text-decoration: none; color: #0077b6;">About</a></li>
-            <li style="margin: 0 1rem;"><a href="#additional-info" style="text-decoration: none; color: #0077b6;">Details</a></li>
-            <li style="margin: 0 1rem;"><a href="https://pancakeswap.finance/?outputCurrency=0xE62A9bc6eDe534E18Dd2793Dcaf5A2B6df112180" style="text-decoration: none; color: #0077b6;">Buy</a></li>
-        </ul>
-    </nav>
-
     <main class="main">
         <div class="container main__container">
-            <section id="main-info" class="main__info">
+            <section class="main__info">
                 <h2 class="main__heading">Unlock the future of decentralized finance with Lisprocoin.</h2>
             </section>
             <div class="button-container">
-                <a href="https://pancakeswap.finance/?outputCurrency=0xE62A9bc6eDe534E18Dd2793Dcaf5A2B6df112180" class="buy-button" aria-label="Compra Lisprocoin su PancakeSwap">Buy on PancakeSwap</a>
+                <a href="https://pancakeswap.finance/?outputCurrency=0xE62A9bc6eDe534E18Dd2793Dcaf5A2B6df112180" class="buy-button">Buy on PancakeSwap</a>
             </div>
-            <section id="additional-info" class="additional-info">
+            <section class="additional-info">
                 <h3 class="additional-info__heading">Project Details</h3>
                 <p class="additional-info__text">Lisprocoin ticker: LSP20</p>
                 <p class="additional-info__text">Network: BEP20</p>
-                <p class="additional-info__text">Smart contract: <a href="https://bscscan.com/token/0xe62a9bc6ede534e18dd2793dcaf5a2b6df112180" class="additional-info__link">Verify on BscScan</a></p>
-                <p class="additional-info__text">Check out our <a href="https://example.com/whitepaper.pdf" class="additional-info__link">Whitepaper</a></p>
+                <p class="additional-info__text">
+                    Smart contract (link to verify): 
+                    <a href="https://bscscan.com/token/0xe62a9bc6ede534e18dd2793dcaf5a2b6df112180" class="additional-info__link">Verify on BscScan</a>
+                </p>
+                <p class="additional-info__text">Check out our 
+                    <a href="#" class="additional-info__link">Whitepaper</a>
+                </p>
             </section>
         </div>
     </main>
