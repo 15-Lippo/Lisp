@@ -1,0 +1,81 @@
+package com.lisprocoin.airdrop;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.web.bind.annotation.*;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.http.HttpStatus;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import org.web3j.protocol.Web3j;
+import org.web3j.protocol.http.HttpService;
+
+import java.io.IOException;
+import java.math.BigInteger;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.HashSet;
+
+@SpringBootApplication
+@RestController
+public class AirdropApplication {
+    private static final String BSC_RPC_URL = "YOUR_BSC_RPC_URL";
+    private static final String CONTRACT_ADDRESS = "YOUR_LISPROCOIN_CONTRACT_ADDRESS";
+    // Add Database here, or replace with local memory set
+    private HashSet<String> airdropParticipants = new HashSet<>();
+
+
+    public static void main(String[] args) {
+       SpringApplication.run(AirdropApplication.class, args);
+    }
+
+//  Airdrop Status and Registration Endpoint
+
+    @PostMapping("/api/airdrop")
+    public ResponseEntity<Map<String, Object>> processAirdrop(@RequestBody Map<String, String> body) {
+        String address = body.get("address");
+        Map<String, Object> response = new HashMap<>();
+        if (address == null || address.isEmpty()) {
+             response.put("success", false);
+             response.put("message", "No address was provided.");
+             return new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
+        }
+        // 1. Check if address is already participating (you might use a database)
+        if(airdropParticipants.contains(address)) {
+            response.put("success", false);
+            response.put("message", "Address already claimed!");
+            return new ResponseEntity<>(response, HttpStatus.OK);
+         }
+
+        // 2. Make call to Smart Contract
+      try{
+        // Replace the method name with your smart contract method for airdrop token.
+            boolean success = callContractMethod(address);
+        if (success) {
+            airdropParticipants.add(address);
+             response.put("success", true);
+             response.put("message", "Airdrop claim successful!");
+         }
+        else {
+              response.put("success", false);
+               response.put("message", "Airdrop claim failed! Please check you balance or try again!");
+        }
+      }catch (IOException e){
+           response.put("success", false);
+             response.put("message", "Error communicating to Blockchain!");
+          return new ResponseEntity<>(response, HttpStatus.INTERNAL_SERVER_ERROR);
+      }
+     return new ResponseEntity<>(response, HttpStatus.OK);
+
+}
+
+ //    Smart Contract call
+    private boolean callContractMethod(String toAddress) throws IOException {
+        Web3j web3 = Web3j.build(new HttpService(BSC_RPC_URL)); // BSC testnet or mainnet
+       //  add code here to call your smart contract to airdrop token
+        //  For example, you can use web3j library and Contract.java to interact to call method on your Smart contract, for the airdrop of token
+        return true; // or false if something fails during contract call
+    }
+
+}
