@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
-      <style>
+    <style>
       /* Stili base */
         body {
             font-family: 'Roboto', sans-serif;
@@ -135,25 +135,15 @@
             margin: 0;
             font-size: 0.8em;
         }
-    .coinbrain-chart-container {
-    width: 100%;
-    height: 450px;
-  }
-    .coinbrain-iframe {
+     .tradingview-container {
+        height: calc(100vh - 250px); /* Set height to the remaining viewport height minus the header and footer */
         width: 100%;
+      }
+     .tradingview-iframe{
         height: 100%;
+        width: 100%;
         border: none;
-    }
- .coinbrain-multichart-container {
-        width: 100%;
-        height: 600px; /* Regola l'altezza a seconda della necessità */
-    }
-    .coinbrain-multichart-iframe {
-        width: 100%;
-        height: 100%;
-         border: none;
-        
-    }
+      }
     </style>
 </head>
 <body>
@@ -193,13 +183,13 @@
                 </section>
             </section>
             
-             <!-- CoinBrain Multichart -->
-            <section class="tradingview-chart">
-                <h3 class="tradingview-chart__heading">Price Chart</h3>
-                   <div class="coinbrain-multichart-container">
-                     <iframe class="coinbrain-multichart-iframe" src="https://coinbrain.com/multichart/embed/bnb-0xe62a9bc6ede534e18dd2793dcaf5a2b6df112180"></iframe>
+             <!-- TradingView Chart -->
+               <section class="tradingview-chart">
+                    <h3 class="tradingview-chart__heading">Price Chart</h3>
+                    <div class="tradingview-container">
+                        <iframe class="tradingview-iframe" src="https://coinmooner.com/coin/lisprocoin-lsp20"></iframe>
                     </div>
-            </section>
+               </section>
              
         </div>
     </main>
