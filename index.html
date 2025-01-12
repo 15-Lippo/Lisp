@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
-    <style>
+      <style>
       /* Stili base */
         body {
             font-family: 'Roboto', sans-serif;
@@ -135,15 +135,16 @@
             margin: 0;
             font-size: 0.8em;
         }
-     .tradingview-container {
-        height: calc(100vh - 250px); /* Set height to the remaining viewport height minus the header and footer */
+    .coinbrain-chart-container {
+    width: 100%;
+    height: 450px;
+  }
+    .coinbrain-iframe {
         width: 100%;
-      }
-     .tradingview-iframe{
         height: 100%;
-        width: 100%;
         border: none;
-      }
+    }
+
     </style>
 </head>
 <body>
@@ -183,13 +184,13 @@
                 </section>
             </section>
             
-             <!-- TradingView Chart -->
-               <section class="tradingview-chart">
-                    <h3 class="tradingview-chart__heading">Price Chart</h3>
-                    <div class="tradingview-container">
-                        <iframe class="tradingview-iframe" src="https://coinmooner.com/coin/lisprocoin-lsp20"></iframe>
-                    </div>
-               </section>
+             <!-- CoinBrain Chart -->
+            <section class="tradingview-chart">
+                <h3 class="tradingview-chart__heading">Price Chart</h3>
+                    <div class="coinbrain-chart-container">
+                      <iframe class="coinbrain-iframe" src="https://coinbrain.com/widgets/chart?currency=bnb&address=0xE62A9bc6eDe534E18Dd2793Dcaf5A2B6df112180&theme=light&language=en"></iframe>
+                   </div>
+            </section>
              
         </div>
     </main>
