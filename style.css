@@ -17,50 +17,57 @@ body {
 /* Header Styles */
 .header {
     background-color: #fff;
-    padding: 20px 0;
+    padding: 40px 0;
     text-align: center;
 }
 
 .header__container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
-.logo-container{
-    margin-bottom: 20px;
+
+.logo-container {
+  margin-bottom: 30px;
 }
+
 .logo {
-    max-width: 200px;
+    max-width: 250px;
     display: block;
-     margin: auto;
+    margin: auto;
 }
 
 .header__title {
     margin: 0;
-    font-size: 2em;
+    font-size: 2.5em;
+    color:#444;
+     font-family: 'Poppins', sans-serif;
 }
 /* Main Content Styles */
 .main{
-  padding: 20px;
- text-align: center;
+  padding: 40px 0;
+  text-align: center;
 }
 .main__container{
    padding: 20px;
 }
 
 .main__info{
-  margin-bottom: 20px;
+  margin-bottom: 40px;
 }
-.main__text {
-   font-size: 1.2em;
-    max-width: 600px;
+.main__heading {
+   font-size: 1.6em;
+    max-width: 800px;
     margin: 0 auto;
+      color:#444;
+     font-family: 'Poppins', sans-serif;
+
 }
 .button-container{
-    margin: 20px;
+    margin: 40px 0;
      display:flex;
-        justify-content: center;
+     justify-content: center;
 }
 .buy-button {
     display: inline-block;
@@ -83,22 +90,27 @@ body {
  background: #fff;
  border-radius: 8px;
  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-
+}
+.additional-info__heading{
+ margin-bottom: 20px;
+ color: #444;
+  font-size: 1.3em;
+    font-family: 'Poppins', sans-serif;
 }
 .additional-info__text{
   margin: 10px 0;
 }
- .additional-info__link{
+.additional-info__link{
     color: #007bff;
 }
 
 /* Footer Styles */
 .footer {
     text-align: center;
-    padding: 10px 0;
+    padding: 15px 0;
     font-size: 0.8em;
     background-color: #e0e0e0;
-    margin-top: 20px;
+    margin-top: 40px;
 }
 .footer__container{
    padding: 20px;
@@ -106,6 +118,10 @@ body {
 
 .footer__text{
      margin-bottom: 10px;
+     color: #555;
+}
+.footer__disclaimer{
+ color: #555;
 }
 
 /* Responsive Adjustments */
@@ -115,25 +131,26 @@ body {
        flex-direction: column;
   }
    .logo {
-        max-width: 150px;
+        max-width: 180px;
     }
     .header__title{
-         font-size: 1.5em;
+         font-size: 1.8em;
     }
-    .main__text{
-      font-size: 1em;
-    }
-  .buy-button {
+    .main__heading{
+        font-size: 1.3em;
+   }
+     .buy-button {
        font-size: 1em;
         padding: 10px 20px;
    }
     .additional-info__text{
         font-size: 0.9em;
      }
-     .footer__text {
+    .footer__text {
        font-size: 0.7em;
       }
-    .footer__disclaimer{
-        font-size: 0.7em;
-    }
+     .footer__disclaimer{
+         font-size: 0.7em;
+      }
+
 }
